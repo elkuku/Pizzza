@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5">
+  <name>Pizzza</name>
+  <creationDate>18-Aug-2012</creationDate>
+  <author>Nikolai Plath</author>
+  <authorEmail>der.el.kuku@gmail.com</authorEmail>
+  <authorUrl>https://github.com/elkuku</authorUrl>
+  <copyright>2012 Nikolai Plath</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <version>1.0</version>
+  <description>A simple hello world MVC component</description>
+  <scriptfile/>
+  <install>
+    <sql/>
+  </install>
+  <uninstall>
+    <sql/>
+  </uninstall>
+  <update>
+    <schemas/>
+  </update>
+  <files folder="site">
+    <folder>views</folder>
+    <filename>controller.php</filename>
+    <filename>pizzza.php</filename>
+  </files>
+  <administration>
+    <menu img="components/com_pizzza/assets/images/com_pizzza-16.png">Pizzza</menu>
+    <files folder="admin">
+      <folder>assets</folder>
+      <folder>language</folder>
+      <filename>CHANGELOG.php</filename>
+      <filename>pizzza.php</filename>
+    </files>
+  </administration>
+</extension>
