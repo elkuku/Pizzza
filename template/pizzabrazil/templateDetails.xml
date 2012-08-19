@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" version="2.5">
+  <name>PizzaBrazil</name>
+  <creationDate>18-Aug-2012</creationDate>
+  <author>Nikolai Plath</author>
+  <authorEmail>der.el.kuku@gmail.com</authorEmail>
+  <authorUrl>https://github.com/elkuku</authorUrl>
+  <copyright>2012 Nikolai Plath</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <version>1.0</version>
+  <description>Based on Twitter Bootstrap / Fluid layout.</description>
+  <files folder="site">
+    <folder>css</folder>
+    <folder>img</folder>
+    <folder>js</folder>
+    <filename>CHANGELOG.php</filename>
+    <filename>component.php</filename>
+    <filename>error.php</filename>
+    <filename>favicon.ico</filename>
+    <filename>index.php</filename>
+    <filename>templateDetails.xml</filename>
+    <filename>template_preview.png</filename>
+    <filename>template_thumbnail.png</filename>
+  </files>
+  <params/>
+  <config>
+    <fields name="params">
+			
+		<fieldset name="advanced">
+				
+				
+			<field name="sitetitle" type="text" default="" label="TPL_PIZZABRAZIL_SITETITLE_LABEL" description="TPL_PIZZABRAZIL_SITETITLE_DESC" filter="string"></field><field name="sitedescription" type="text" default="" label="TPL_PIZZABRAZIL_SITEDESCRIPTION_LABEL" description="TPL_PIZZABRAZIL_SITEDESCRIPTION_DESC" filter="string"></field></fieldset></fields>
+  </config>
+  <positions>
+    <position>position-1</position>
+    <position>position-2</position>
+    <position>position-3</position>
+    <position>position-4</position>
+    <position>position-5</position>
+    <position>position-6</position>
+    <position>position-7</position>
+    <position>position-8</position>
+    <position>position-9</position>
+    <position>position-10</position>
+    <position>position-11</position>
+    <position>position-12</position>
+  </positions>
+</extension>
