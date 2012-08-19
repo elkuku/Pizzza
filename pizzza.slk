@@ -1,0 +1,12 @@
+# This file contains the paths to project Pizzza
+
+# Component
+basePath=/home/elkuku/repos/Pizzza
+
+component/admin/com_pizzza administrator/components/com_pizzza
+component/site/com_pizzza components/com_pizzza
+component/media/com_pizzza media/com_pizzza
+
+# Template
+
+template/pizzabrazil templates/pizzabrazil
