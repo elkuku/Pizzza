@@ -53,10 +53,6 @@ echo '<?xml version="1.0" encoding="utf-8"?'.'>';
         </div>
     </div>
 
-    <div class="error">
-        <jdoc:include type="message" />
-    </div>
-
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span12">
@@ -82,6 +78,7 @@ echo '<?xml version="1.0" encoding="utf-8"?'.'>';
             </div><!--/span-->
 
             <div class="span9">
+                <jdoc:include type="message" />
                 <div class="hero-unit">
                     <jdoc:include type="modules" name="position-5" />
                     <h1>Hello, world!</h1>
