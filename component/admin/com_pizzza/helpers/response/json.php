@@ -42,7 +42,7 @@ class PzaResponseJson
     private $data = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param object  $response  The Response data
      * @param string  $message   The main response message
@@ -89,9 +89,9 @@ class PzaResponseJson
     }
 
     /**
-     * Magic toString method for sending the response in JSON format
+     * Magic toString method for sending the response in JSON format.
      *
-     * @return    string    The response in JSON format
+     * @return  string  The response in JSON format
      */
     public function __toString()
     {

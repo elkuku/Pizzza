@@ -7,35 +7,18 @@
  * @license    GNU/GPL
  */
 
-//jimport('joomla.application.component.controller');
-
 /**
  * Request controller.
  *
  * @package    Pizzza
  * @subpackage Controllers
  */
-class PizzzaControllerRequest extends JController
+class PizzzaControllerRequest extends JControllerLegacy
 {
-    /**
-     * @var PzaResponseJson
-     */
-    private $response = null;
-
-    public function __construct($config = array())
-    {
-        parent::__construct($config);
-    }
-
     public function listall()
     {
-        $data = new stdClass;
+        echo new PzaResponseJson(JModel::getInstance('Pizzzas', 'Model')->listAll());
 
-        $data->a = 'huhu';
-        $data->b = 'schuhu';
-
-        $this->response = new PzaResponseJson($data);
-$dd = (string)$this->response;
-        echo $this->response;
+        jexit();
     }
 }
