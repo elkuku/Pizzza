@@ -32,25 +32,28 @@ class ModelPizzzas extends JModel
                 ->select('srel.id')
                 ->where('srel.pid='.$category->id);
 
-            $ids = $this->_db->setQuery($query)->loadResultArray();
+            $items = $this->_db->setQuery($query)->loadObjectList();
 
-            if($ids)
+            foreach($items as $item)
             {
-                foreach($ids as $id)
-                {
-                    $query->clear()
-                        ->from('#__sobipro_field_data AS sfda')
-                        ->select('sfda.baseData')
-                        ->where('sfda.sid='.$id);
+                $query->clear()
+                    ->from('#__sobipro_field_data AS sfda')
+                    ->select('sfda.baseData')
+                    ->where('sfda.sid='.$item->id)
+                    ->group('sfda.fid')
+                    ->where('lang='.$this->_db->quote('es-ES'));
 
-                    $entry = $this->_db->setQuery($query)->loadObjectList();
+                $entry = $this->_db->setQuery($query)->loadObjectList();
+//var_dump($entry);
+                $e = new stdClass;
+                $e->catid = $category->id;
+                $e->title = $entry[0]->baseData;
+                $e->description = $entry[1]->baseData;
+                $e->price_peq =(isset($entry[2])) ? $entry[2]->baseData : 0;
+                $e->price_med =(isset($entry[3])) ? $entry[3]->baseData : 0;
+                $e->price_gra =(isset($entry[4])) ? $entry[4]->baseData : 0;
 
-                    $e = new stdClass;
-                    $e->title = $entry[0]->baseData;
-                    $e->description = $entry[1]->baseData;
-
-                    $catList['items'][] = $e;
-                }
+                $catList['items'][] = $e;
             }
 
             $list[] = $catList;
