@@ -1,24 +1,7 @@
-<!-- 
-
- <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="10dp"
-    android:textSize="20sp" >
-</TextView>
-
- <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
- -->
-    
- <fragment
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tutlist_fragment"
     android:name="org.elkuku.pizzza.PizzaList"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/tutlist_fragment">
+    android:layout_height="match_parent" >
+
 </fragment>

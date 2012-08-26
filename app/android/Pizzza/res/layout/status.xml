@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/pizzza_test"
     android:orientation="vertical" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="T E S T"
-        android:textSize="30sp" />
+        android:text="*** T E S T ***"
+        android:textSize="33sp" />
 
     <Button
         android:id="@+id/button2"
@@ -27,14 +28,14 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Large Text 1"
+        android:text="Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Large Text 2"
+        android:text="Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button

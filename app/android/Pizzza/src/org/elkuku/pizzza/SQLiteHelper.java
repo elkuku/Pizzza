@@ -10,36 +10,50 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 	private static final String DATABASE = "pizzza.db";
 
 	private static final String TABLE_MENU = "menu";
+	private static final String TABLE_PREFS = "prefs";
 
-	private static final int DB_VERSION = 1;
+	private static final int DB_VERSION = 11;
 
-	private static final String DATABASE_CREATE =
-			"create table " + TABLE_MENU
+	private static final String CREATE_TABLE_MENU =
+			"CREATE TABLE " + TABLE_MENU
 			+ " ("
-			+ "id integer primary key autoincrement"
-			+ ", catid integer"
-			+ ", title text"
-			+ ", description text"
+			+ "id INTEGER PRIMARY KEY AUTOINCREMENT"
+			+ ", catid INTEGER"
+			+ ", title TEXT"
+			+ ", description TEXT"
+			+ ", price_peq REAL"
+			+ ", price_med REAL"
+			+ ", price_gra REAL"
+			+ ", favorite INTEGER"
+			+ ");";
+
+	private static final String CREATE_TABLE_PREFS =
+			"CREATE TABLE IF NOT EXISTS " + TABLE_PREFS
+			+ " ("
+			+ "id INTEGER PRIMARY KEY AUTOINCREMENT"
+			+ ", key TEXT"
+			+ ", value TEXT"
 			+ ");";
 
 	public SQLiteHelper(Context context) {
 		super(context, DATABASE, null, DB_VERSION);
-
-		Log.e("DBDEBUG", "SQLiteHelper created");
 	}
 
 	@Override
 	public void onCreate(SQLiteDatabase database) {
-		Log.e("DBDEBUG", "SQLiteHelper onCreate: " + DATABASE_CREATE);
+		Log.i("DBDEBUG", "SQLiteHelper onCreate: \n"
+			+ CREATE_TABLE_MENU
+			+"\n"+ CREATE_TABLE_PREFS);
 
-		database.execSQL(DATABASE_CREATE);
+		database.execSQL(CREATE_TABLE_MENU);
+		database.execSQL(CREATE_TABLE_PREFS);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase database, int oldVersion,
 			int newVersion) {
-		// upgrading..
-		Log.w(SQLiteHelper.class.getName(), "Upgrading database from version "
+
+		Log.i(SQLiteHelper.class.getName(), "Upgrading database from version "
 				+ oldVersion + " to " + newVersion
 				+ ", which will destroy all old data");
 
@@ -52,7 +66,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 		SQLiteDatabase database = getWritableDatabase();
 
 		database.execSQL("DROP TABLE IF EXISTS " + TABLE_MENU);
-		database.execSQL(DATABASE_CREATE);
+		database.execSQL(CREATE_TABLE_MENU);
 	}
 
 }

@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,7 +15,6 @@ import org.json.JSONObject;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
@@ -31,17 +31,8 @@ public class ContentProvider {
 		context = c;
 	}
 
-	public String getFoo() {
-		String foo = "bar";
-
-		return foo;
-	}
-
-	/*
-	 * public List<Entry> provide(String type) { List<Entry> list = new
-	 * ArrayList<Entry>(); }
-	 */
-	public String provide(String type, DataSourceMenu d, PizzzaList f) throws Exception {
+	// TODO void ?
+	public String fetchUpdates(String type, DataSourceMenu d, PizzzaList f) throws Exception {
 		datasource = d;
 		fragment = f;
 
@@ -65,10 +56,8 @@ public class ContentProvider {
 
 		private JSONObject jsonObject;
 
-		String strParsedValue = null;
-
 		public BackgroundTaskText() {
-			// TODO Auto-generated constructor stub
+			fragment.setListShown(false);
 		}
 
 		protected String doInBackground(String... url) {
@@ -80,32 +69,33 @@ public class ContentProvider {
 				return s;
 			} catch (IOException e) {
 				Log.e("PIZZA", e.getMessage());
-				s = e.getMessage();
 			}
 
 			return s;
 		}
 
-		protected void onPreExecute(Bitmap bitmap) {
-
-		}
-
 		protected void onPostExecute(String string) {
-			try {
-				Toast.makeText(context, string, Toast.LENGTH_SHORT).show();
-				// this.strJSONValue = string;
-				ArrayList<ContentValues> ccc = parseJSON(string);
-				String aaa = ccc.toString();
 
-				Toast.makeText(context, ccc.toString(), Toast.LENGTH_SHORT).show();
+			if (0 == string.length()) {
+				Toast.makeText(context, R.string.request_failed, Toast.LENGTH_LONG).show();
+			} else {
+				try {
 
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+					//ArrayList<ContentValues> ccc =
+							parseJSON(string);
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
 			}
+
+			fragment.setListShown(true);
 		}
 
+		// TODO void ?
 		public ArrayList<ContentValues> parseJSON(String string) throws JSONException {
+
+			//-- Store favorites
+			List<Long> oldFavs = datasource.getFavorites();
 
 			datasource.reset();
 
@@ -116,38 +106,25 @@ public class ContentProvider {
 			JSONArray categories = jsonObject.getJSONArray("data");
 
 			for (int i = 0; i < categories.length(); i++) {
-				strParsedValue += "\n" + categories.getJSONObject(i).getString("name").toString();
+
+				datasource.createEntry(0, categories.getJSONObject(i).getString("name").toString(), "", 0, 0, 0);
 
 				JSONArray items = categories.getJSONObject(i).getJSONArray("items");
 
 				for (int i1 = 0; i1 < items.length(); i1++) {
-					ContentValues values = new ContentValues();
-
-
-					values.put("catid", 123);
-					values.put("title", items.getJSONObject(i1).getString("title").toString());
-					values.put("description", items.getJSONObject(i1).getString("title").toString());
 
 					JSONObject item = items.getJSONObject(i1);
 
-					datasource.createEntry(
-							123,
-							item.getString("title"),
-							item.getString("description")
-							);
-
-					list.add(values);
-
-					// list.add(putData(items.getJSONObject(i1).getString("title")
-					// .toString(),
-					// items.getJSONObject(i1).getString("description")
-					// .toString()));
-					strParsedValue += "\n---" + items.getJSONObject(i1).getString("title").toString();
-					strParsedValue += "\n------" + items.getJSONObject(i1).getString("description").toString();
+					datasource.createEntry(item.getInt("catid"), item.getString("title"),
+							item.getString("description"), item.getDouble("price_peq"), item.getDouble("price_med"),
+							item.getDouble("price_gra"));
 				}
 			}
 
-			Toast.makeText(context, strParsedValue, Toast.LENGTH_LONG).show();
+			//-- Re setting the favorites
+			for (Long id : oldFavs) {
+				datasource.setFavorite(id, 1);
+			}
 
 			fragment.update();
 

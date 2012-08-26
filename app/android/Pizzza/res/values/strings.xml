@@ -3,5 +3,6 @@
     <string name="app_name">Pizza Brazil</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Pizza Brazil</string>
+    <string name="request_failed">La solicitud ha fallado</string>
 
 </resources>

@@ -64,6 +64,7 @@ public class Status extends Fragment {
 				PizzzaList fragment = (PizzzaList)getFragmentManager().findFragmentById(R.id.listFragment);
 
 				SQLiteHelper dbhelper = new SQLiteHelper(getActivity());
+
 				dbhelper.resetDb();
 
 				Toast.makeText(getActivity(), "Database has been deleted",
@@ -71,7 +72,6 @@ public class Status extends Fragment {
 
 				fragment.onActivityCreated(null);
 			}
-
 		});
 
 		/* Insert db */
@@ -82,51 +82,21 @@ public class Status extends Fragment {
 			@Override
 			public void onClick(View v) {
 
-				/*
-				PizzzaList fragment = (PizzzaList)getFragmentManager().findFragmentById(R.id.listFragment);
-
-				fragment.addEntry();
-
-//				PizzzaList p = new PizzzaList();
-
-	//			p.addEntry();
-*/
-
 				PizzzaList fragment = (PizzzaList)getFragmentManager().findFragmentById(R.id.listFragment);
 
 				DataSourceMenu datasource = new DataSourceMenu(getActivity());
-				//fragment.setListShown(false);
-
-
 
 				int catid = 123;
-				String title = "First entryxx";
-				String description = "First description";
+				String title = "TEST entry";
+				String description = "TEST description";
 
-				Entry entry = datasource.createEntry(catid, title, description);
+//				TEntry entry =
+						datasource.createEntry(catid, title, description, 1.22, 2.33, 3.44);
 
 				fragment.update();
-				//fragment.setListShown(true);
-				/*
-ArrayAdapter adapter = (ArrayAdapter)fragment.getListAdapter();
-adapter.notifyDataSetChanged();
-fragment.onStart();
-*/
-//fragment.setListAdapter(adapter);
-				/*
-*/
-
-
-				//View vw = getActivity().findViewById(R.id.tutlist_fragment);
-
-
 
 				datasource.close();
-
-				//Toast.makeText(getActivity(), "Entry "+entry.getTitle()+" has been created",
-				//		Toast.LENGTH_LONG).show();
 			}
-
 		});
 
 		/* Refresh db */
@@ -143,39 +113,15 @@ fragment.onStart();
 
 				ContentProvider contentProvider = new ContentProvider(getActivity());
 
-				//String foo = contentProvider.getFoo();
-
 				try {
-					String list = contentProvider.provide("menu", datasource, fragment);
-					Toast.makeText(getActivity(), list, Toast.LENGTH_SHORT).show();
+					//String response =
+							contentProvider.fetchUpdates("menu", datasource, fragment);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
 					e.printStackTrace();
 				}
-
-			//	DataSourceMenu datasource = new DataSourceMenu(getActivity());
-
-			//	SQLiteHelper dbhelper = new SQLiteHelper(getActivity());
-
-//				dbhelper.resetDb();
-
-
-
-
-/*
-				int catid = 123;
-				String title = "First entry";
-				String description = "First description";
-
-				Entry entry = datasource.createEntry(catid, title, description);
-
-				Toast.makeText(getActivity(), "Entries have been refreshed.",
-						Toast.LENGTH_LONG).show();
- */
 			}
 
 		});
-
 	}
 }
