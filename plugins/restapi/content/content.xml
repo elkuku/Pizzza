@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="restapi">
+	<name>Content List</name>
+	<author>Nikolai Plath</author>
+	<creationDate>Aug-2012</creationDate>
+	<copyright>CC SA</copyright>
+	<license>http://gnu.org</license>
+	<authorEmail>email@example.org</authorEmail>
+	<authorUrl>https://github.com/elkuku</authorUrl>
+	<version>1</version>
+	<description>Returns a list of SOBI entries</description>
+	<files>
+		<filename plugin="content">content.php</filename>
+	</files>
+	<params/>
+</install>
