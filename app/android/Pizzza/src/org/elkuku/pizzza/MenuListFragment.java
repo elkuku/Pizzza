@@ -10,8 +10,6 @@ import android.widget.ListView;
 
 public class MenuListFragment extends ListFragment {
 
-	private List<TEntry> menuList;
-
 	private MenuDataSource datasource;
 
 	private static final int REQUEST_CODE = 10;
@@ -33,24 +31,18 @@ public class MenuListFragment extends ListFragment {
 	}
 
 	public void update() {
-		/*
-		 * SharedPreferences prefs =
-		 * PreferenceManager.getDefaultSharedPreferences(getActivity());
-		 *
-		 * String a1 = prefs.getString("foox", "bar");
-		 *
-		 * Log.w("PREFTEST", a1);
-		 */
+		List<TEntry> list;
+
 		datasource = new MenuDataSource(getActivity(), this);
 
 		datasource.open();
-		menuList = datasource.getAllEntries();
+		list = datasource.getAllEntries();
 		datasource.close();
 
 		// TODO we are creating a dummy list - learn java => ArrayAdapter ;(
-		String[] dummylist = new String[menuList.size()];
+		String[] dummylist = new String[list.size()];
 
-		MenuAdapter adapter = new MenuAdapter(getActivity(), menuList, dummylist);
+		MenuAdapter adapter = new MenuAdapter(getActivity(), list, dummylist);
 
 		setListAdapter(adapter);
 	}
@@ -80,7 +72,10 @@ public class MenuListFragment extends ListFragment {
 
 				update();
 
-				//Toast.makeText(getActivity(), "favorite set: "+data.getLongExtra("id", 0)+"- - "+data.getIntExtra("favorite", 0), Toast.LENGTH_SHORT).show();
+				// Toast.makeText(getActivity(),
+				// "favorite set: "+data.getLongExtra("id",
+				// 0)+"- - "+data.getIntExtra("favorite", 0),
+				// Toast.LENGTH_SHORT).show();
 			}
 		}
 	}

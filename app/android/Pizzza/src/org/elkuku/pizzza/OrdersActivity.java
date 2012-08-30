@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
 
-public class PedidosActivity extends Activity {
+public class OrdersActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -13,7 +13,7 @@ public class PedidosActivity extends Activity {
 
 		setContentView(R.layout.pedidos);
 
-		PedidosDataSource dataSource = new PedidosDataSource(getApplicationContext());
+		OrdersDataSource dataSource = new OrdersDataSource(getApplicationContext());
 		TContact contact = dataSource.getContact();
 
 		TextView txtCompany = (TextView) findViewById(R.id.txtCompany);

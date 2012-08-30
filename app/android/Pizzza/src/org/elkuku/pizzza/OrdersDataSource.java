@@ -14,7 +14,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
-public class PedidosDataSource {
+public class OrdersDataSource {
 	private Context context;
 	private SQLiteDatabase database;
 	private SQLiteHelper dbhelper;
@@ -23,7 +23,7 @@ public class PedidosDataSource {
 	private String table = "contact";
 	private String[] columns = { "id", "name", "address", "city", "phone1", "phone2", "phone3", "email", "webpage", "misc" };
 
-	public PedidosDataSource(Context context) {
+	public OrdersDataSource(Context context) {
 
 		this.context = context;
 

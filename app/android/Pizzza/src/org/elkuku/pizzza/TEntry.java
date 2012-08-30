@@ -78,10 +78,4 @@ public class TEntry {
 	public void setFavorite(int favorite) {
 		this.favorite = favorite;
 	}
-
-	@Override
-	public String toString() {
-		return String.format("%s\n    %s", title, description);
-	}
-
 }

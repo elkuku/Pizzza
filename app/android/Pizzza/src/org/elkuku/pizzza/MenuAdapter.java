@@ -17,7 +17,7 @@ public class MenuAdapter extends ArrayAdapter<String> {
 	private List<TEntry> menuList;
 
 	public MenuAdapter(Context context, List<TEntry> menuList, String[] dummylist) {
-		super(context, R.layout.pizzzarow, dummylist);
+		super(context, R.layout.pizzza_row, dummylist);
 		this.context = context;
 		this.menuList = menuList;
 	}
@@ -25,7 +25,7 @@ public class MenuAdapter extends ArrayAdapter<String> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View rowView = inflater.inflate(R.layout.pizzzarow, parent, false);
+		View rowView = inflater.inflate(R.layout.pizzza_row, parent, false);
 
 		TEntry item = menuList.get(position);
 
@@ -35,23 +35,16 @@ public class MenuAdapter extends ArrayAdapter<String> {
 		TextView textViewDesc = (TextView) rowView.findViewById(R.id.ingredients);
 		textViewDesc.setText(item.getDescription());
 
-
-		//Preferences.pprefs =
-		//SharedPreferences prefs = getSharedPreferences("myDataStorage");
-//Log.i("DBDEBUG", ""+item.getId()+" - "+item.getFavorite());
-
-		if(0 == item.getCatid()) {
+		if (0 == item.getCatid()) {
 			// This is a category
 			rowView.setBackgroundColor(getContext().getResources().getColor(R.color.pizzza_CI_bg));
 			textViewLabel.setTextColor(getContext().getResources().getColor(R.color.pizzza_CI_fg));
 			textViewDesc.setHeight(0);
-		}
-		else if(1 == item.getFavorite()) {
+		} else if (1 == item.getFavorite()) {
 			// Favorites
 			ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 			imageView.setImageResource(R.drawable.bookmark);
-		}
-		else {
+		} else {
 			// Regular entry
 			ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 			imageView.setVisibility(View.GONE);

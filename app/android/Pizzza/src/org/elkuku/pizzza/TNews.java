@@ -6,6 +6,7 @@ public class TNews {
 	private String title;
 	private String text;
 	private String date;
+
 	public long getId() {
 		return id;
 	}

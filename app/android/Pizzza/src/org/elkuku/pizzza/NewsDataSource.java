@@ -69,29 +69,9 @@ public class NewsDataSource {
 
 		return item;
 	}
-/*
-	public TPromo getItem() {
-		cursor = database.query(table, columns, null, null, null, null, null);
-		cursor.moveToFirst();
 
-		TPromo item = new TPromo();
-
-		if (cursor.getCount() == 0)
-			return item;
-
-		while (cursor.isAfterLast() == false) {
-			item = cursorToItem(cursor);
-
-			cursor.moveToNext();
-		}
-
-		cursor.close();
-
-		return item;
-	}
-
-	protected List<TPromo> getAllEntries() {
-		List<TPromo> list = new ArrayList<TPromo>();
+	protected List<TNews> getAllEntries() {
+		List<TNews> list = new ArrayList<TNews>();
 
 		cursor = database.query(table, columns, null, null, null, null, null);
 		cursor.moveToFirst();
@@ -100,7 +80,7 @@ public class NewsDataSource {
 			return list;
 
 		while (cursor.isAfterLast() == false) {
-			TPromo entry = cursorToItem(cursor);
+			TNews entry = cursorToItem(cursor);
 			list.add(entry);
 			cursor.moveToNext();
 		}
@@ -109,7 +89,7 @@ public class NewsDataSource {
 
 		return list;
 	}
-*/
+
 	protected List<String> getList() {
 		List<String> list = new ArrayList<String>();
 
@@ -140,14 +120,9 @@ public class NewsDataSource {
 
 		for (int i = 0; i < data.length(); i++) {
 
-			//JSONArray items = data.getJSONObject(i).getJSONArray("items");
+			JSONObject item = data.getJSONObject(i);
 
-			//for (int i1 = 0; i1 < items.length(); i1++) {
-
-				JSONObject item = data.getJSONObject(i);
-
-				createEntry(item.getString("title"), item.getString("text"), item.getString("date"));
-			//}
+			createEntry(item.getString("title"), item.getString("text"), item.getString("date"));
 		}
 	}
 
@@ -157,7 +132,7 @@ public class NewsDataSource {
 		item.setId(cursor.getLong(0));
 		item.setTitle(cursor.getString(1));
 		item.setText(cursor.getString(2));
-		item.setDate(cursor.getString(2));
+		item.setDate(cursor.getString(3));
 
 		return item;
 	}

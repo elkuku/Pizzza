@@ -22,7 +22,7 @@
         android:text="Lo Nuevo" />
 
     <Button
-        android:id="@+id/btnPedidos"
+        android:id="@+id/btnOrders"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Pedidos" />
@@ -40,7 +40,6 @@
         android:layout_gravity="center_horizontal"
         android:text="*** T E S T ***"
         android:textSize="33sp" />
-
 
     <Button
         android:id="@+id/btnKillDb"

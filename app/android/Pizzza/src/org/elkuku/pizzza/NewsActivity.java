@@ -4,7 +4,6 @@ import java.util.List;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 
 public class NewsActivity extends ListActivity {
 
@@ -18,10 +17,15 @@ public class NewsActivity extends ListActivity {
 		NewsDataSource datasource = new NewsDataSource(this);
 
 		datasource.open();
-		List<String> list = datasource.getList();
+		List<TNews> list = datasource.getAllEntries();
 		datasource.close();
 
-		setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list));
+		// TODO we are creating a dummy list - learn java => ArrayAdapter ;(
+		String[] dummylist = new String[list.size()];
+
+		NewsAdapter adapter = new NewsAdapter(this, list, dummylist);
+
+		setListAdapter(adapter);
 	}
 
 }

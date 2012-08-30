@@ -34,7 +34,7 @@
             android:label="@string/company_name" >
         </activity>
         <activity
-            android:name=".PedidosActivity"
+            android:name=".OrdersActivity"
             android:label="@string/company_name" >
         </activity>
         <activity

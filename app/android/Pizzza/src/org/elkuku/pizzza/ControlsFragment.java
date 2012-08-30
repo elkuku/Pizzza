@@ -3,7 +3,6 @@ package org.elkuku.pizzza;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,8 +45,6 @@ public class ControlsFragment extends Fragment {
 
 		Button btnNews = (Button) getActivity().findViewById(R.id.btnNews);
 
-		Log.w("PIZZZA", "News Button: "+btnNews);
-
 		btnNews.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -57,13 +54,13 @@ public class ControlsFragment extends Fragment {
 			}
 		});
 
-		Button btnPedidos = (Button) getActivity().findViewById(R.id.btnPedidos);
+		Button btnOrders = (Button) getActivity().findViewById(R.id.btnOrders);
 
-		btnPedidos.setOnClickListener(new OnClickListener() {
+		btnOrders.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getActivity(), PedidosActivity.class);
+				Intent i = new Intent(getActivity(), OrdersActivity.class);
 				startActivity(i);
 			}
 		});
@@ -103,7 +100,7 @@ public class ControlsFragment extends Fragment {
 				MenuListFragment fragment = (MenuListFragment) getFragmentManager().findFragmentById(R.id.listFragment);
 
 				MenuDataSource menuDatasource = new MenuDataSource(getActivity(), fragment);
-				PedidosDataSource pedidosDatasource = new PedidosDataSource(getActivity());
+				OrdersDataSource pedidosDatasource = new OrdersDataSource(getActivity());
 				PromosDataSource promosDatasource = new PromosDataSource(getActivity());
 				NewsDataSource newsDatasource = new NewsDataSource(getActivity());
 

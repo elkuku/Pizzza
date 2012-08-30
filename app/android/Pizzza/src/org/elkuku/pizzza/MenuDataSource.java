@@ -48,8 +48,7 @@ public class MenuDataSource {
 
 	public void update() {
 
-		String url = context.getString(R.string.pizzza_link_base) + "/"
-				+ context.getString(R.string.pizzza_menu_link);
+		String url = context.getString(R.string.pizzza_link_base) + "/" + context.getString(R.string.pizzza_menu_link);
 
 		new BackgroundTaskText().execute(url);
 	}
@@ -77,8 +76,6 @@ public class MenuDataSource {
 
 		return entry;
 	}
-
-
 
 	public List<Long> getFavorites() {
 		List<Long> list = new ArrayList<Long>();
@@ -135,7 +132,8 @@ public class MenuDataSource {
 				JSONObject item = items.getJSONObject(i1);
 
 				createEntry(item.getInt("catid"), item.getString("field_name"), item.getString("field_ingredientes"),
-						item.getDouble("field_precio_peq"), item.getDouble("field_precio_med"), item.getDouble("field_precio_gra"));
+						item.getDouble("field_precio_peq"), item.getDouble("field_precio_med"),
+						item.getDouble("field_precio_gra"));
 			}
 		}
 

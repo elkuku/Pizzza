@@ -68,27 +68,6 @@ public class PromosDataSource {
 
 		return item;
 	}
-/*
-	public TPromo getItem() {
-		cursor = database.query(table, columns, null, null, null, null, null);
-		cursor.moveToFirst();
-
-		TPromo item = new TPromo();
-
-		if (cursor.getCount() == 0)
-			return item;
-
-		while (cursor.isAfterLast() == false) {
-			item = cursorToItem(cursor);
-
-			cursor.moveToNext();
-		}
-
-		cursor.close();
-
-		return item;
-	}
- */
 
 	protected List<TPromo> getAllEntries() {
 		List<TPromo> list = new ArrayList<TPromo>();

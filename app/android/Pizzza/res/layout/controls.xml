@@ -17,7 +17,7 @@
             android:id="@+id/btnPromos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Promos" />
+            android:text="Promo" />
 
         <Button
             android:id="@+id/btnNews"
@@ -26,10 +26,10 @@
             android:text="Nuevo" />
 
         <Button
-            android:id="@+id/btnPedidos"
+            android:id="@+id/btnOrders"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pedidos" />
+            android:text="Pedido" />
     </LinearLayout>
 
     <LinearLayout

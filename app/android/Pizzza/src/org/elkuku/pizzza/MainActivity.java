@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,7 +40,13 @@ public class MainActivity extends Activity {
 		}
 
 		TextView txtPromo = (TextView) findViewById(R.id.txtPromo);
-		txtPromo.setText(promoText);
+
+		if(promoText.contentEquals("")) {
+			txtPromo.setVisibility(View.GONE);
+		}
+		else {
+			txtPromo.setText(promoText);
+		}
 	}
 
 	@Override
