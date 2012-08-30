@@ -13,3 +13,11 @@ component/media/com_pizzza media/com_pizzza
 # Template
 
 template/pizzabrazil templates/pizzabrazil
+
+# REST
+
+rest
+
+# Plugins
+
+plugins/restapi
