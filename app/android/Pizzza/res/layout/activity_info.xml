@@ -30,15 +30,6 @@
         android:layout_height="wrap_content"
         android:text="Precios..." />
 
-    <!--
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Esto me parece"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    -->
-
     <CheckBox
         android:id="@+id/chkFavorite"
         android:layout_width="wrap_content"

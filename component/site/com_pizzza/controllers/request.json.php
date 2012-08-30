@@ -21,4 +21,13 @@ class PizzzaControllerRequest extends JControllerLegacy
 
         jexit();
     }
+
+    public function getContact()
+    {
+        $id = JFactory::getApplication()->input->getInt('id');
+
+        echo new PzaResponseJson(JModel::getInstance('Contacts', 'Model')->getContact($id));
+
+        jexit();
+    }
 }

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-public class InfoActivity extends Activity {
+public class DetailsActivity extends Activity {
 
 	private Bundle extras;
 
@@ -24,7 +24,7 @@ public class InfoActivity extends Activity {
 			return;
 		}
 
-		String title = extras.getString("title")+" ID: "+extras.getLong("id");
+		String title = extras.getString("title");
 		String description = extras.getString("description");
 		int favorite = extras.getInt("favorite");
 

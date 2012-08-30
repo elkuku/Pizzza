@@ -1,10 +1,13 @@
 package org.elkuku.pizzza;
 
+import java.util.Calendar;
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -15,44 +18,35 @@ public class MainActivity extends Activity {
 
 		setContentView(R.layout.activity_main);
 
-		String ss = "12,34,56";
+		Calendar now = Calendar.getInstance();
 
-		final String[] parts = ss.split(",");
+		String[] strDays = new String[] { "domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado" };
 
-//		Log.w("PREFTEST", Arrays.toString(parts));
+		String curDay = strDays[now.get(Calendar.DAY_OF_WEEK) - 1];
 
-		StringBuilder b = new StringBuilder();
+		PromosDataSource datasource = new PromosDataSource(this);
 
-		for(String s : parts){
-			if(0 == b.length()) {
-				b.append(s);
-			}
-			else {
-				b.append(","+s);
+		datasource.open();
+		List<TPromo> list = datasource.getAllEntries();
+		datasource.close();
+
+		String promoText = "";
+
+		for (TPromo item : list) {
+			if (item.getDay().equals(curDay)) {
+				promoText = item.getName();
 			}
 		}
 
-		Log.w("PREFTEST", b.toString());
-/*
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-
-		String a1 = prefs.getString("foox", "bar");
-
-		Log.w("PREFTEST", a1);
-
-		Editor mEditor = prefs.edit();
-		mEditor.putString("foox","bazzzz");
-//		mEditor.putString("password","password1234");
-		mEditor.commit();
-
-		String a2 = prefs.getString("foox", "bar");
-		Log.w("PREFTEST", a2);
-*/
+		TextView txtPromo = (TextView) findViewById(R.id.txtPromo);
+		txtPromo.setText(promoText);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+
 		getMenuInflater().inflate(R.menu.activity_main, menu);
+
 		return true;
 	}
 
@@ -60,7 +54,8 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 
 		String s = item.toString();
-		Toast.makeText(getApplication(), "Hey: " + s, Toast.LENGTH_LONG).show();
+
+		Toast.makeText(getApplication(), "Hey: " + s, Toast.LENGTH_SHORT).show();
 
 		return true;
 	}

@@ -3,6 +3,7 @@ package org.elkuku.pizzza;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,8 +42,8 @@ public class MenuAdapter extends ArrayAdapter<String> {
 
 		if(0 == item.getCatid()) {
 			// This is a category
-			rowView.setBackgroundColor(getContext().getResources().getColor(R.color.pizzza_brazil_green));
-			textViewLabel.setTextColor(getContext().getResources().getColor(R.color.pizzza_brazil_yellow));
+			rowView.setBackgroundColor(getContext().getResources().getColor(R.color.pizzza_CI_bg));
+			textViewLabel.setTextColor(getContext().getResources().getColor(R.color.pizzza_CI_fg));
 			textViewDesc.setHeight(0);
 		}
 		else if(1 == item.getFavorite()) {
@@ -61,5 +62,21 @@ public class MenuAdapter extends ArrayAdapter<String> {
 
 	public TEntry getEntry(int position) {
 		return menuList.get(position);
+	}
+
+	public Intent getEntryToIntent(int position, int REQUEST_CODE) {
+		TEntry item = getEntry(position);
+
+		Intent i = new Intent(context, DetailsActivity.class);
+
+		i.putExtra("id", item.getId());
+		i.putExtra("title", item.getTitle());
+		i.putExtra("description", item.getDescription());
+		i.putExtra("price_peq", item.getPrice_peq());
+		i.putExtra("price_med", item.getPrice_med());
+		i.putExtra("price_gra", item.getPrice_gra());
+		i.putExtra("favorite", item.getFavorite());
+
+		return i;
 	}
 }

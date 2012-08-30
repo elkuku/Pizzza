@@ -1,8 +1,17 @@
 <resources>
 
     <string name="app_name">Pizza Brazil</string>
-    <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Pizza Brazil</string>
+    <string name="company_name">Pizza Brazil</string>
+    <string name="menu_settings">Settings</string>
     <string name="request_failed">La solicitud ha fallado</string>
+
+    <!-- URLs -->
+
+    <string name="pizzza_link_base">http://192.168.0.100/pizza-brazil/service</string>
+    <string name="pizzza_menu_link">sobi?sid=54</string>
+    <string name="pizzza_promo_link">sobi?cid=63</string>
+    <string name="pizzza_contact_link">contact?id=1</string>
+    <string name="pizzza_news_link">content?cid=8</string>
 
 </resources>

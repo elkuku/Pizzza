@@ -7,13 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 
-public class PizzzaList extends ListFragment {
+public class MenuListFragment extends ListFragment {
 
 	private List<TEntry> menuList;
 
-	private DataSourceMenu datasource;
+	private MenuDataSource datasource;
 
 	private static final int REQUEST_CODE = 10;
 
@@ -29,7 +28,7 @@ public class PizzzaList extends ListFragment {
 		update();
 	}
 
-	public DataSourceMenu getDataSource() {
+	public MenuDataSource getDataSource() {
 		return datasource;
 	}
 
@@ -42,7 +41,7 @@ public class PizzzaList extends ListFragment {
 		 *
 		 * Log.w("PREFTEST", a1);
 		 */
-		datasource = new DataSourceMenu(getActivity());
+		datasource = new MenuDataSource(getActivity(), this);
 
 		datasource.open();
 		menuList = datasource.getAllEntries();
@@ -58,6 +57,7 @@ public class PizzzaList extends ListFragment {
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
+
 		MenuAdapter adapter = (MenuAdapter) getListAdapter();
 
 		TEntry item = adapter.getEntry(position);
@@ -66,23 +66,9 @@ public class PizzzaList extends ListFragment {
 		if (0 == item.getCatid())
 			return;
 
-		TextView txt1 = (TextView) getActivity().findViewById(R.id.textView1);
-		txt1.setText(item.getTitle());
+		Intent intent = adapter.getEntryToIntent(position, REQUEST_CODE);
 
-		TextView txt2 = (TextView) getActivity().findViewById(R.id.textView2);
-		txt2.setText(String.valueOf(item.getId()));
-
-		Intent i = new Intent(getActivity(), InfoActivity.class);
-
-		i.putExtra("id", item.getId());
-		i.putExtra("title", item.getTitle());
-		i.putExtra("description", item.getDescription());
-		i.putExtra("price_peq", item.getPrice_peq());
-		i.putExtra("price_med", item.getPrice_med());
-		i.putExtra("price_gra", item.getPrice_gra());
-		i.putExtra("favorite", item.getFavorite());
-
-		startActivityForResult(i, REQUEST_CODE);
+		startActivityForResult(intent, REQUEST_CODE);
 	}
 
 	@Override
