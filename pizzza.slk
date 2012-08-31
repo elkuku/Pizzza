@@ -21,3 +21,5 @@ rest
 # Plugins
 
 plugins/restapi
+
+plugins/system/pizzza
