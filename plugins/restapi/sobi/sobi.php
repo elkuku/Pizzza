@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') || die('=;)');
 /**
  * @package    Pizzza
- * @subpackage Controllers
+ * @subpackage Plugins
  * @author     Nikolai Plath {@link https://github.com/elkuku}
  * @author     Created on 18-Aug-2012
  * @license    GNU/GPL
@@ -17,42 +17,35 @@ class PlgRestapiSobi extends JPlugin
      */
     private $db = null;
 
-    public function onRestCall()
+    public function onRestCall($type, $id)
     {
+        // @todo ACL and other stuff
+
         $list = array();
-        $input = JFactory::getApplication()->input;
         $this->db = JFactory::getDbo();
 
-        //-- Section
-        $sectionId = $input->getInt('sid');
+        switch($type)
+        {
+            case 'section' :
+                //-- Get all categories and items by section
+                $categories = $this->getSobiCategories((int)$id);
+                break;
 
-        //-- Category
-        $categoryId = $input->getInt('cid');
+            case 'category' :
+                //-- Get all items by category
+                $category = new stdClass;
+                $category->name = '';
+                $category->id = (int)$id;
+                $categories = array($category);
+                break;
 
-        //-- Item
-        $sobiId = $input->getInt('id');
+            case 'item' :
+                //-- Get a single item
+                return array($this->getSobiItem((int)$id));
+                break;
 
-        if(0 != $sectionId)
-        {
-            //-- Get all categories and items by section
-            $categories = $this->getSobiCategories($sectionId);
-        }
-        elseif(0 != $categoryId)
-        {
-            //-- Get all items by category
-            $category = new stdClass;
-            $category->name = '';
-            $category->id = $categoryId;
-            $categories = array($category);
-        }
-        elseif(0 != $sobiId)
-        {
-            //-- Get a single item
-            return array($this->getSobiItem($sobiId));
-        }
-        else
-        {
-            throw new InvalidArgumentException(__METHOD__.' - Invalid arguments');
+            default :
+                throw new InvalidArgumentException('Invalid SOBI call');
         }
 
         foreach($categories as $category)
@@ -77,15 +70,15 @@ class PlgRestapiSobi extends JPlugin
 
     private function fieldsToItem($fields, $categoryId = 0)
     {
-        $e = new stdClass;
-        $e->catid = $categoryId;
+        $item = new stdClass;
+        $item->catid = $categoryId;
 
         foreach($fields as $field)
         {
-            $e->{$field->fName} = $field->fValue;
+            $item->{$field->fName} = $field->fValue;
         }
 
-        return $e;
+        return $item;
     }
 
     /**

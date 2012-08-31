@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system">
+    <name>Pizzza System Plugin</name>
+    <author>Nikolai Plath</author>
+    <creationDate>Aug 2012</creationDate>
+    <copyright>(C)</copyright>
+    <license>CC SA</license>
+    <authorEmail>noone@example.org</authorEmail>
+    <authorUrl>http://github.com/elkuku</authorUrl>
+    <version>1</version>
+    <description>Pizzza system plugin</description>
+    <files>
+        <filename plugin="pizzza">pizzza.php</filename>
+    </files>
+</extension>

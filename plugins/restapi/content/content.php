@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') || die('=;)');
 /**
  * @package    Pizzza
- * @subpackage Controllers
+ * @subpackage Plugins
  * @author     Nikolai Plath {@link https://github.com/elkuku}
  * @author     Created on 18-Aug-2012
  * @license    GNU/GPL
@@ -12,12 +12,9 @@
  */
 class PlgRestapiContent extends JPlugin
 {
-    public function onRestCall()
+    public function onRestCall($type, $id)
     {
-        $input = JFactory::getApplication()->input;
-
-        $cid = $input->getInt('cid');
-        $id = $input->getInt('id');
+        // @todo ACL and other stuff
 
         $db = JFactory::getDbo();
 
@@ -26,20 +23,20 @@ class PlgRestapiContent extends JPlugin
         $query->select('c.title, c.introtext AS text, c.created AS date')
             ->from('#__content AS c');
 
-        if(0 != $cid)
+        switch($type)
         {
-            $query->where('c.catid='.$cid);
-        }
-        elseif(0 != $id)
-        {
-            $query->where('c.id='.$id);
-        }
-        else
-        {
-            throw new InvalidArgumentException(__METHOD__.' - Invalid arguments');
+            case 'category':
+                $query->where('c.catid='.(int)$id);
+                break;
+
+            case 'article':
+                $query->where('c.id='.(int)$id);
+                break;
+
+            default :
+                throw new InvalidArgumentException('Invalid content call');
         }
 
         return $db->setQuery($query)->loadObjectList();
     }
-
 }

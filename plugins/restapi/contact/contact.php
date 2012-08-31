@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') || die('=;)');
 /**
  * @package    Pizzza
- * @subpackage Controllers
+ * @subpackage Plugins
  * @author     Nikolai Plath {@link https://github.com/elkuku}
  * @author     Created on 18-Aug-2012
  * @license    GNU/GPL
@@ -12,20 +12,27 @@
  */
 class PlgRestapiContact extends JPlugin
 {
-    public function onRestCall()
+    public function onRestCall($type, $id)
     {
+        // @todo ACL and other stuff
+
+        switch($type)
+        {
+            case 'id':
+                //-- Get a single item
+                break;
+
+            default :
+                throw new InvalidArgumentException('Invalid contact call');
+        }
+
         $db = JFactory::getDbo();
-
-        $contactId = JFactory::getApplication()->input->getInt('id');
-
-        if(0 == $contactId)
-            throw new InvalidArgumentException(__METHOD__.' - Invalid arguments');
 
         $query = $db->getQuery(true)
             ->from('#__contact_details AS c')
             ->select('c.id, c.name, c.address, c.suburb, c.telephone, c.fax, c.mobile')
             ->select('c.email_to, c.webpage, c.misc')
-            ->where('id='.$contactId);
+            ->where('id='.(int)$id);
 
         return $db->setQuery($query)->loadObject();
     }
