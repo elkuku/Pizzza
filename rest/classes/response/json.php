@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') || die('=;)');
 /**
  * @package    Pizzza
- * @subpackage Controllers
+ * @subpackage REST.classes
  * @author     Nikolai Plath {@link https://github.com/elkuku}
  * @author     Created on 18-Aug-2012
  * @license    GNU/GPL
@@ -13,6 +13,13 @@
 final class RestResponseJson
 {
     /**
+     * The main response data
+     *
+     * @var object
+     */
+    private $data = null;
+
+    /**
      * Determines whether the request was successful.
      * Status != 0 means error.
      *
@@ -21,18 +28,11 @@ final class RestResponseJson
     private $status = 0;
 
     /**
-     * The main response message
+     * An additional response message
      *
      * @var string
      */
     private $message = '';
-
-    /**
-     * The response data
-     *
-     * @var object
-     */
-    private $data = null;
 
     /**
      * Constructor.
@@ -44,11 +44,10 @@ final class RestResponseJson
     {
         $this->message = $message;
 
-        // Get the message queue
         // Check if we are dealing with an error
         if($response instanceof Exception)
         {
-            // Prepare the error response
+            // Prepare an error response
             $this->status = ($response->getCode()) ? : 1;
             $this->message = $response->getMessage();
         }
@@ -116,5 +115,4 @@ final class RestResponseJson
     {
         return json_encode(get_object_vars($this));
     }
-
 }

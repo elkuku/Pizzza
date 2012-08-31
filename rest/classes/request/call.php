@@ -1,31 +1,58 @@
-<?php
+<?php defined('_JEXEC') || die('=;)');
 /**
- * User: elkuku
- * Date: 30.08.12
- * Time: 13:03
+ * @package    Pizzza
+ * @subpackage REST.classes
+ * @author     Nikolai Plath {@link https://github.com/elkuku}
+ * @author     Created on 18-Aug-2012
+ * @license    GNU/GPL
+ */
+
+/**
+ * Request call class.
  */
 class RestRequestCall
 {
     /**
      * Identify method.
      *
+     * @throws RuntimeException
      * @throws InvalidArgumentException
      *
-     * @return string
+     * @return RestRequestRest
      */
-    public static function get()
+    public static function parseCall()
     {
-        $pcs = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-        $url = parse_url(end($pcs));
+        $rest = new RestRequestRest;
 
-        if(false == isset($url['path']))
-            throw new InvalidArgumentException(__METHOD__.' - Invalid call', 4);
+        $parts = explode('/', str_replace(JURI::base(), '', JURI::current()));
 
-        $pcs = explode('.', $url['path']);
+        if(count($parts) < 2)
+            throw new RuntimeException('Invalid API call');
 
-        if(false == isset($pcs[0]))
-            throw new InvalidArgumentException(__METHOD__.' - Invalid call', 5);
+        $rest->apiVersion = array_shift($parts);
 
-        return $pcs[0];
+        switch($rest->apiVersion)
+        {
+            case 'v1' :
+                define('REST_API', 'v1');
+                break;
+
+            default :
+                throw new RuntimeException('Invalid API version');
+                break;
+        }
+
+        $call = array_shift($parts);
+
+        $callParts = explode('.', $call);
+
+        $rest->call = $callParts[0];
+
+        if(isset($callParts[1]))
+            $rest->format = $callParts[1];
+
+        $rest->commands = $parts;
+
+        return $rest;
     }
 }

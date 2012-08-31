@@ -8,6 +8,15 @@
  */
 
 /**
- * Authentication exception class.
+ * Rest request base class.
  */
-class RestExceptionAuthentication extends Exception {}
+class RestRequestRest
+{
+    public $call = '';
+
+    public $commands = array();
+
+    public $format = 'json';
+
+    public $apiVersion = '';
+}

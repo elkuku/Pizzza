@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Pizzza
- * @subpackage Base
+ * @subpackage REST
  * @author     Nikolai Plath {@link https://github.com/elkuku}
  * @author     Created on 30-Aug-2012
  * @license    GNU/GPL
@@ -13,8 +13,8 @@ define('_JEXEC', 1);
 // Setup the base path related constant.
 define('JPATH_BASE', dirname(dirname($_SERVER['SCRIPT_FILENAME'])));
 
-ini_set('display_errors', true);
-error_reporting(- 1);
+ini_set('display_errors', true); //@debug
+error_reporting(- 1); //@debug
 
 require JPATH_BASE.'/includes/defines.php';
 require JPATH_BASE.'/libraries/import.php';
@@ -31,6 +31,8 @@ class Pizzza extends JApplicationWeb
     /**
      * Overrides the parent doExecute method to run the web application.
      *
+     * @throws RuntimeException
+     *
      * @return  void
      */
     protected function doExecute()
@@ -41,14 +43,17 @@ class Pizzza extends JApplicationWeb
         {
             RestLoginHelper::login();
 
-            JPluginHelper::importPlugin('restapi', RestRequestCall::get());
+            $rest = RestRequestCall::parseCall();
+
+            JPluginHelper::importPlugin('restapi', $rest->call);
 
             $pluginResult = JDispatcher::getInstance()
-                ->trigger('onRestCall');
+                ->trigger('onRestCall', $rest->commands);
 
-            $result = (isset($pluginResult[0])) ? $pluginResult[0] : null;
+            if(false == isset($pluginResult[0]))
+                throw new RuntimeException('No plugin result - disabled ?', 66);
 
-            $response->setData($result);
+            $response->setData($pluginResult[0]);
         }
         catch(RestExceptionAuthentication $e)
         {
@@ -63,13 +68,41 @@ class Pizzza extends JApplicationWeb
         catch(Exception $e)
         {
             $response->setMessage($e->getMessage())
-                ->setStatus(69);
+                ->setStatus($e->getCode() ? : 1);
         }
 
         $this->setBody((string)$response);
+
+        JApplication::getInstance('site')
+            ->logout();
+    }
+
+    /**
+     * This is used by Joomla!'s auth plugin to load the language...
+     *
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return false;
+    }
+
+    public function checkSession()
+    {
+        JApplication::getInstance('site')
+            ->checkSession();
+    }
+
+    public function getClientId()
+    {
+        return JApplication::getInstance('site')
+            ->getClientId();
     }
 }
 
+/**
+ * I am a dummy :(...
+ */
 class JComponentHelper
 {
     public static function getParams()
@@ -88,5 +121,8 @@ try
 }
 catch(Exception $e)
 {
+    JApplication::getInstance('site')
+        ->logout();
+
     echo new RestResponseJson($e);
 }
