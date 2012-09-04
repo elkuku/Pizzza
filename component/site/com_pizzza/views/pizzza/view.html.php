@@ -3,7 +3,7 @@
  * @package    Pizzza
  * @subpackage Views
  * @author     Nikolai Plath {@link https://github.com/elkuku}
- * @author     Created on 18-Aug-2012
+ * @author     Created on 30-Aug-2012
  * @license    GNU/GPL
  */
 
@@ -11,13 +11,13 @@
 defined('_JEXEC') || die('=;)');
 
 
-//-- Import the JView class
 jimport('joomla.application.component.view');
 
 /**
  * HTML View class for the Pizzza Component.
  *
- * @package Pizzza
+ * @package    Pizzza
+ * @subpackage Views
  */
 class PizzzaViewPizzza extends JView
 {
@@ -30,7 +30,7 @@ class PizzzaViewPizzza extends JView
      */
     public function display($tpl = null)
     {
-        $this->greeting = "Hello World!";
+        $this->data = $this->get('Data');
 
         parent::display($tpl);
     }//function

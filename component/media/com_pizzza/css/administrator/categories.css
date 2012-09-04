@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+/**
+ * @package    Pizzza
+ * @subpackage CSS
+ * @author     Nikolai Plath {@link https://github.com/elkuku}
+ * @author     Created on 30-Aug-2012
+ * @license    GNU/GPL
+ */
+
+
+.icon-48-pizzza-categories.icon-48-categories {
+    background-image:
+        url(../../images/administrator/icon-48-com_pizzza-categories.png);
+}
+
+.icon-48-pizzza-category-edit.icon-48-category-edit {
+    background-image:
+        url(../../images/administrator/icon-48-com_pizzza-category-edit.png);
+}
+
+.icon-48-pizzza-category-add.icon-48-category-add {
+    background-image:
+        url(../../images/administrator/icon-48-com_pizzza-category-add.png);
+}

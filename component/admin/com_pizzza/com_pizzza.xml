@@ -1,36 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="2.5">
   <name>Pizzza</name>
-  <creationDate>18-Aug-2012</creationDate>
+  <creationDate>30-Aug-2012</creationDate>
   <author>Nikolai Plath</author>
   <authorEmail>der.el.kuku@gmail.com</authorEmail>
   <authorUrl>https://github.com/elkuku</authorUrl>
   <copyright>2012 Nikolai Plath</copyright>
   <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
   <version>1.0</version>
-  <description>A simple hello world MVC component</description>
-  <scriptfile/>
+  <description>Pizzza provides a REST interface for Joomla!</description>
+  <scriptfile>install/script.php</scriptfile>
   <install>
-    <sql/>
+    <sql>
+      <file driver="mysql" charset="utf8">install/sql/mysql/install.utf8.sql</file>
+    </sql>
   </install>
   <uninstall>
-    <sql/>
+    <sql>
+      <file driver="mysql" charset="utf8">install/sql/mysql/uninstall.utf8.sql</file>
+    </sql>
   </uninstall>
   <update>
     <schemas/>
   </update>
   <files folder="site">
+    <folder>assets</folder>
+    <folder>models</folder>
     <folder>views</folder>
     <filename>controller.php</filename>
     <filename>pizzza.php</filename>
   </files>
   <administration>
     <menu img="components/com_pizzza/assets/images/com_pizzza-16.png">Pizzza</menu>
+    <submenu>
+      <menu img="class:article" link="option=com_pizzza&amp;view=pizzzalist">Pizzza</menu>
+      <menu img="class:category" link="option=com_categories&amp;extension=com_pizzza">Categories</menu>
+    </submenu>
     <files folder="admin">
       <folder>assets</folder>
+      <folder>controllers</folder>
+      <folder>helpers</folder>
+      <folder>install</folder>
       <folder>language</folder>
+      <folder>models</folder>
+      <folder>tables</folder>
+      <folder>views</folder>
       <filename>CHANGELOG.php</filename>
+      <filename>config.xml</filename>
+      <filename>controller.php</filename>
       <filename>pizzza.php</filename>
     </files>
   </administration>
+  <media destination="com_pizzza" folder="media">
+    <folder>css</folder>
+    <folder>images</folder>
+  </media>
 </extension>

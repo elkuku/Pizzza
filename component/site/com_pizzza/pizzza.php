@@ -1,21 +1,44 @@
-<?php defined('_JEXEC') || die('=;)');
+<?php
 /**
  * @package    Pizzza
  * @subpackage Base
  * @author     Nikolai Plath {@link https://github.com/elkuku}
- * @author     Created on 18-Aug-2012
+ * @author     Created on 30-Aug-2012
  * @license    GNU/GPL
  */
 
-require JPATH_COMPONENT_ADMINISTRATOR.'/helpers/loader.php';
+//-- No direct access
+defined('_JEXEC') || die('=;)');
 
-//-- Import the class JController
-jimport('joomla.application.component.controller');
 
-//-- Get an instance of the controller with the prefix 'Pizzza'
-$controller = JController::getInstance('Pizzza');
+/**
+ *  Require the base controller.
+ */
+require_once JPATH_COMPONENT.DS.'controller.php';
 
-//-- Execute the 'task' from the Request
+// Require specific controller if requested
+$controller = JRequest::getCmd('controller');
+
+if($controller)
+{
+    $path = JPATH_COMPONENT.DS.'controllers'.DS.$controller.'.php';
+
+    if(file_exists($path))
+    {
+        require_once $path;
+    }
+    else
+    {
+        $controller = '';
+    }
+}
+
+//-- Create the controller
+$classname = 'PizzzaController'.$controller;
+
+$controller = new $classname;
+
+//-- Perform the Request task
 $controller->execute(JRequest::getCmd('task'));
 
 //-- Redirect if set by the controller

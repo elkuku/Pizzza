@@ -21,4 +21,18 @@ jimport('joomla.application.component.controller');
  */
 class PizzzaController extends JController
 {
-}//class
+    /**
+     * Method to display the view.
+     *
+     * @return void
+     */
+    public function display($cachable = false, $urlparams = false)
+    {
+        //-- Setting the default view
+        JRequest::setVar('view', JRequest::getCmd('view', 'Pizzzalist'));
+
+        parent::display($cachable, $urlparams);
+
+        PizzzaHelper::addSubmenu('pizzzalist');
+    }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset>
+        <field name="id" type="hidden"
+                />
+        <field name="catid" type="category"
+               label="Category id"
+               description="Category ID"
+               extension="com_pizzza"
+                />
+        <field name="title" type="text"
+               label="Title"
+               description=""
+                />
+
+        <field name="type" type="text"
+               label="Type"
+               description=""
+                />
+        <field name="tid" type="text"
+               label="Type id"
+               description=""
+                />
+    </fieldset>
+</form>

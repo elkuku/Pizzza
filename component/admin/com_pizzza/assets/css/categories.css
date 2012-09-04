@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+/**
+ * @package    Pizzza
+ * @subpackage CSS
+ * @author     Nikolai Plath {@link https://github.com/elkuku}
+ * @author     Created on 30-Aug-2012
+ * @license    GNU/GPL
+ */
+
+
+.icon-48-pizzza-categories.icon-48-categories {
+    background-image: url(../images/com_pizzza-48.png)
+}

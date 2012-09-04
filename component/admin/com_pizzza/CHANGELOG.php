@@ -9,7 +9,7 @@
  * @package    Pizzza
  * @subpackage Documentation
  * @author     Nikolai Plath {@link https://github.com/elkuku}
- * @author     Created on 18-Aug-2012
+ * @author     Created on 30-Aug-2012
  */
 
 //--No direct access to this changelog...
@@ -42,7 +42,7 @@ Legend:
  ! -> Note
 ______________________________________________
 
-18-Aug-2012 Nikolai Plath
+30-Aug-2012 Nikolai Plath
  ! Startup
 
 */

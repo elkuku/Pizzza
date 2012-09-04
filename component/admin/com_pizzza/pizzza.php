@@ -1,17 +1,27 @@
-<?php defined('_JEXEC') || die('=;)');
+<?php
 /**
  * @package    Pizzza
  * @subpackage Base
  * @author     Nikolai Plath {@link https://github.com/elkuku}
- * @author     Created on 18-Aug-2012
+ * @author     Created on 30-Aug-2012
  * @license    GNU/GPL
  */
 
-require JPATH_COMPONENT_ADMINISTRATOR.'/helpers/loader.php';
+//-- No direct access
+defined('_JEXEC') || die('=;)');
 
-?>
-<h1>I am just a dummy :~|</h1>
 
-<p>
-    Please visit the <a href="../index.php?option=com_pizzza">frontpage view of Pizzza</a>.
-</p>
+// Die Joomla! Controllerbibliothek importieren
+jimport('joomla.application.component.controller');
+
+// Die Helperdatei registrieren
+JLoader::register('PizzzaHelper', JPATH_COMPONENT.'/helpers/pizzza.php');
+
+// Eine Instanz des Controllers mit dem Präfix 'HalloWelt' beziehen
+$controller = JController::getInstance('Pizzza');
+
+// Den 'task' der im Request übergeben wurde ausführen
+$controller->execute(JRequest::getCmd('task'));
+
+// Einen Redirect durchführen wenn er im Controller gesetzt ist
+$controller->redirect();
