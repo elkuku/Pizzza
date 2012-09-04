@@ -111,7 +111,7 @@ class PlgRestapiSobi extends JPlugin
     {
         static $query;
 
-        if( ! $query) $query = $this->db->getQuery(true);
+        if(! $query) $query = $this->db->getQuery(true);
 
         $query->clear()
             ->select('srel.id')
@@ -132,7 +132,7 @@ class PlgRestapiSobi extends JPlugin
     {
         static $query;
 
-        if( ! $query) $query = $this->db->getQuery(true);
+        if(! $query) $query = $this->db->getQuery(true);
 
         $query->clear()
             ->select('sfie.nid AS fName, sfda.baseData AS fValue')
