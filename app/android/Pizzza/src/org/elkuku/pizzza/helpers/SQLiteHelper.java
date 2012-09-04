@@ -1,4 +1,4 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.helpers;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

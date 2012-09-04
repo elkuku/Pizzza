@@ -30,15 +30,15 @@
             android:label="@string/company_name" >
         </activity>
         <activity
-            android:name=".PromosActivity"
+            android:name=".promos.PromosActivity"
             android:label="@string/company_name" >
         </activity>
         <activity
-            android:name=".OrdersActivity"
+            android:name=".orders.OrdersActivity"
             android:label="@string/company_name" >
         </activity>
         <activity
-            android:name=".NewsActivity"
+            android:name=".news.NewsActivity"
             android:label="@string/company_name" >
         </activity>
         </application>

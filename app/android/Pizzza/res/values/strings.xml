@@ -11,7 +11,7 @@
 
     <!-- URLs -->
 
-    <string name="pizzza_link_base">http://192.168.0.100/pizza-brazil/rest/v1</string>
+    <string name="pizzza_link_base">http://192.168.0.111/pizza-brazil/rest/v1</string>
 
     <string name="pizzza_news_link">content/category/8</string>
     <string name="pizzza_contact_link">contact/id/1</string>

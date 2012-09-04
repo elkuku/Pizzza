@@ -1,6 +1,14 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.menu;
 
 import java.util.List;
+
+import org.elkuku.pizzza.DetailsActivity;
+import org.elkuku.pizzza.R;
+import org.elkuku.pizzza.R.color;
+import org.elkuku.pizzza.R.drawable;
+import org.elkuku.pizzza.R.id;
+import org.elkuku.pizzza.R.layout;
+import org.elkuku.pizzza.types.TEntry;
 
 import android.content.Context;
 import android.content.Intent;

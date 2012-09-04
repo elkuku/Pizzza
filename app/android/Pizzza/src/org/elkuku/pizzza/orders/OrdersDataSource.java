@@ -1,7 +1,12 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.orders;
 
 import java.io.IOException;
 
+import org.elkuku.pizzza.R;
+import org.elkuku.pizzza.R.string;
+import org.elkuku.pizzza.helpers.HttpHelper;
+import org.elkuku.pizzza.helpers.SQLiteHelper;
+import org.elkuku.pizzza.types.TContact;
 import org.json.JSONException;
 import org.json.JSONObject;
 

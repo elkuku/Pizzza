@@ -1,6 +1,10 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.news;
 
 import java.util.List;
+
+import org.elkuku.pizzza.R;
+import org.elkuku.pizzza.R.layout;
+import org.elkuku.pizzza.types.TNews;
 
 import android.app.ListActivity;
 import android.os.Bundle;

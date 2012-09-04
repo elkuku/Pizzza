@@ -1,4 +1,9 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.orders;
+
+import org.elkuku.pizzza.R;
+import org.elkuku.pizzza.R.id;
+import org.elkuku.pizzza.R.layout;
+import org.elkuku.pizzza.types.TContact;
 
 import android.app.Activity;
 import android.os.Bundle;

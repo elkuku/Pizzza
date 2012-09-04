@@ -3,12 +3,13 @@ package org.elkuku.pizzza;
 import java.util.Calendar;
 import java.util.List;
 
+import org.elkuku.pizzza.promos.PromosDataSource;
+import org.elkuku.pizzza.types.TPromo;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -38,7 +39,7 @@ public class MainActivity extends Activity {
 				promoText = item.getName();
 			}
 		}
-
+/*
 		TextView txtPromo = (TextView) findViewById(R.id.txtPromo);
 
 		if(promoText.contentEquals("")) {
@@ -47,6 +48,7 @@ public class MainActivity extends Activity {
 		else {
 			txtPromo.setText(promoText);
 		}
+		*/
 	}
 
 	@Override

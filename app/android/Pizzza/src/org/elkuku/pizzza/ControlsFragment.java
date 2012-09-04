@@ -1,5 +1,15 @@
 package org.elkuku.pizzza;
 
+import org.elkuku.pizzza.helpers.SQLiteHelper;
+import org.elkuku.pizzza.menu.MenuDataSource;
+import org.elkuku.pizzza.menu.MenuListFragment;
+import org.elkuku.pizzza.news.NewsActivity;
+import org.elkuku.pizzza.news.NewsDataSource;
+import org.elkuku.pizzza.orders.OrdersActivity;
+import org.elkuku.pizzza.orders.OrdersDataSource;
+import org.elkuku.pizzza.promos.PromosActivity;
+import org.elkuku.pizzza.promos.PromosDataSource;
+
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;

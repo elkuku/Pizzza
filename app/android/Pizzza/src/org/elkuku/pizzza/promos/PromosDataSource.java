@@ -1,9 +1,13 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.promos;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.elkuku.pizzza.R;
+import org.elkuku.pizzza.helpers.HttpHelper;
+import org.elkuku.pizzza.helpers.SQLiteHelper;
+import org.elkuku.pizzza.types.TPromo;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -69,7 +73,7 @@ public class PromosDataSource {
 		return item;
 	}
 
-	protected List<TPromo> getAllEntries() {
+	public List<TPromo> getAllEntries() {
 		List<TPromo> list = new ArrayList<TPromo>();
 
 		cursor = database.query(table, columns, null, null, null, null, null);

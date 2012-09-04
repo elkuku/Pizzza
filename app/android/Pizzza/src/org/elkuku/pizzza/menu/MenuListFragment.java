@@ -1,6 +1,8 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.menu;
 
 import java.util.List;
+
+import org.elkuku.pizzza.types.TEntry;
 
 import android.app.ListFragment;
 import android.content.Intent;

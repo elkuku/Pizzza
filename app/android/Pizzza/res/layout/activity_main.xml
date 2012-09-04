@@ -5,25 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <!--
-    <fragment
-        android:id="@+id/statusFragment"
-        android:name="org.elkuku.pizzza.Status"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.25"
-        tools:layout="@layout/status" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical" >
-    -->
-
     <fragment
         android:id="@+id/promo_fragment"
-        android:name="org.elkuku.pizzza.PromoFragment"
+        android:name="org.elkuku.pizzza.promos.PromoFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/promo" />
@@ -37,7 +21,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="org.elkuku.pizzza.MenuListFragment"
+        android:name="org.elkuku.pizzza.menu.MenuListFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

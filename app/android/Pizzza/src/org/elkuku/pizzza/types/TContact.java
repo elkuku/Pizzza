@@ -1,4 +1,4 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.types;
 
 public class TContact {
 

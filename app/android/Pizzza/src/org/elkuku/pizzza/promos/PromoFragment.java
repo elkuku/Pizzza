@@ -1,4 +1,6 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.promos;
+
+import org.elkuku.pizzza.R;
 
 import android.app.Fragment;
 import android.os.Bundle;

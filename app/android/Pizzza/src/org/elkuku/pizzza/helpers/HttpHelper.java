@@ -1,4 +1,4 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.helpers;
 
 import java.io.IOException;
 import java.io.InputStream;
