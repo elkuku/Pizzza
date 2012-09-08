@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Preferences -->
+
+    <string name="pref_header_1">Benutzerdaten</string>
+    <string name="pref_desc_1">Ihre persönlichen Daten</string>
+    <string name="pref_cat_1_title">Zugangsdaten</string>
+
+    <!-- User data -->
+
+    <string name="prefs_username">Benutzername</string>
+    <string name="prefs_username_desc">Bitte geben Sie Ihren Benutzernamen ein</string>
+    <string name="prefs_password">Passwort</string>
+    <string name="prefs_password_desc">Bitte geben Sie Ihr Passwort ein</string>
+
+</resources>

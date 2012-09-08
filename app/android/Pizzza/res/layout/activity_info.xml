@@ -18,29 +18,29 @@
         android:textSize="20dip" />
 
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Precios"
+        android:text="@string/prices"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/txtPrices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Precios..." />
+        android:text="Prices..."
+    />
 
     <CheckBox
         android:id="@+id/chkFavorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Me gusta mucho"
+        android:text="@string/i_like_it"
         android:textSize="20dip" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="Listo" />
+        android:text="@string/ready" />
 
 </LinearLayout>

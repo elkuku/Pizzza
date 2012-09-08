@@ -1,0 +1,26 @@
+<resources>
+
+    <string name="menu_settings">Ajustes</string>
+
+    <!-- Titles -->
+
+    <string name="title_news">Novedades</string>
+    <string name="title_orders">Pedidos</string>
+    <string name="title_promos">Promociones</string>
+
+    <!--  -->
+
+    <string name="prices">Precios</string>
+    <string name="i_like_it">Me gusta mucho</string>
+    <string name="ready">Listo</string>
+    <string name="email">E-mail</string>
+    <string name="phone1">Teléfono</string>
+    <string name="phone2">Claro</string>
+    <string name="phone3">Movi</string>
+    <string name="web_site">Web Site</string>
+
+    <!-- Messages -->
+
+    <string name="request_failed">La solicitud ha fallado</string>
+
+</resources>

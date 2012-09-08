@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Preferences -->
+
+    <string name="pref_header_1">Datos des Usuario</string>
+    <string name="pref_desc_1">Sus datos personales</string>
+    <string name="pref_header_2">Administración</string>
+    <string name="pref_desc_2">Ajustes Administrativos</string>
+    <string name="pref_cat_1_title">Información de Acceso</string>
+
+    <!-- User data -->
+
+    <string name="prefs_username">Nombre de Usuario</string>
+    <string name="prefs_username_desc">Por favor ingrese su nombre de usuario</string>
+    <string name="prefs_password">Clave de Acceso</string>
+    <string name="prefs_password_desc">Por favor ingrese su Clave de Acceso</string>
+
+</resources>

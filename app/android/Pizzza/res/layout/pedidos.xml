@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:background="@color/pizzza_CI_bg"
         android:paddingLeft="20dp"
-        android:text="Pedidos"
+        android:text="@string/title_orders"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/pizzza_CI_fg" />
 
@@ -18,7 +18,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
-        android:text="Company"
+        android:text="Company...."
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
-        android:text="Address" />
+        android:text="Address...." />
 
     <TableLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="Teléfono" />
+                android:text="@string/phone1" />
 
             <TextView
                 android:id="@+id/txtPhone1"
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="Claro" />
+                android:text="@string/phone2" />
 
             <TextView
                 android:id="@+id/txtPhone2"
@@ -87,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="Movi" />
+                android:text="@string/phone3" />
 
             <TextView
                 android:id="@+id/txtPhone3"
@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="Web Site" />
+                android:text="@string/web_site" />
 
             <TextView
                 android:id="@+id/txtWebsite"
@@ -129,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="E-mail" />
+                android:text="@string/email" />
 
             <TextView
                 android:id="@+id/txtEmail"
@@ -148,7 +148,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
-        android:text="Misc"
+        android:text="Misc...."
         android:padding="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 

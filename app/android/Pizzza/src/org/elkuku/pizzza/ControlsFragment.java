@@ -33,9 +33,9 @@ public class ControlsFragment extends Fragment {
 
 		super.onActivityCreated(savedInstanceState);
 
-		Button btnCarta = (Button) getActivity().findViewById(R.id.btnCarta);
+		Button btnMenu = (Button) getActivity().findViewById(R.id.btnMenu);
 
-		btnCarta.setOnClickListener(new OnClickListener() {
+		btnMenu.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {

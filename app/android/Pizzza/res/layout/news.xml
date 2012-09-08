@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:background="@color/pizzza_CI_bg"
         android:gravity="center_horizontal"
-        android:text="Novedades"
+        android:text="@string/title_news"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/pizzza_CI_fg" />
 

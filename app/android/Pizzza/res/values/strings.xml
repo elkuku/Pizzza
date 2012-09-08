@@ -5,14 +5,28 @@
     <string name="company_name">Pizza Brazil</string>
     <string name="menu_settings">Settings</string>
 
+    <!-- Titles -->
+    <string name="title_news">News</string>
+    <string name="title_orders">Orders</string>
+    <string name="title_promos">Promocions</string>
+
+    <!--  -->
+    <string name="prices">Prices</string>
+    <string name="i_like_it">I like it</string>
+    <string name="ready">Ready</string>
+    <string name="email">E-mail</string>
+    <string name="phone1">Phone</string>
+    <string name="phone2">Claro</string>
+    <string name="phone3">Movi</string>
+    <string name="web_site">Web Site</string>
+
     <!-- Messages -->
 
-    <string name="request_failed">La solicitud ha fallado</string>
+    <string name="request_failed">The request failed.</string>
 
     <!-- URLs -->
 
     <string name="pizzza_link_base">http://192.168.0.111/pizza-brazil/rest/v1</string>
-
     <string name="pizzza_news_link">content/category/8</string>
     <string name="pizzza_contact_link">contact/id/1</string>
     <string name="pizzza_menu_link">sobi/section/54</string>

@@ -4,34 +4,34 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/btnCarta"
+        android:id="@+id/btnMenu"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="La Carta" />
+        android:text="@string/btn_menu" />
 
     <Button
         android:id="@+id/btnPromos"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Promociones" />
+        android:text="@string/btn_promos" />
 
     <Button
         android:id="@+id/btnNews"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Lo Nuevo" />
+        android:text="@string/btn_news" />
 
     <Button
         android:id="@+id/btnOrders"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Pedidos" />
+        android:text="@string/btn_orders" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Large Text"
+        android:text="testtest"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView

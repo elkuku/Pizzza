@@ -8,28 +8,28 @@
         android:layout_height="match_parent" >
 
         <Button
-            android:id="@+id/btnCarta"
+            android:id="@+id/btnMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Carta" />
+            android:text="@string/btn_menu" />
 
         <Button
             android:id="@+id/btnPromos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Promo" />
+            android:text="@string/btn_promos" />
 
         <Button
             android:id="@+id/btnNews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nuevo" />
+            android:text="@string/btn_news" />
 
         <Button
             android:id="@+id/btnOrders"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pedido" />
+            android:text="@string/btn_orders" />
     </LinearLayout>
 
     <LinearLayout
@@ -40,7 +40,7 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Text" />
+            android:text="Test..." />
 
         <Button
             android:id="@+id/btnRefresh"

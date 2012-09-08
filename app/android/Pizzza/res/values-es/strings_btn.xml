@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Buttons -->
+
+    <string name="btn_menu">Carta</string>
+    <string name="btn_promos">Promociones</string>
+    <string name="btn_news">Novedades</string>
+    <string name="btn_orders">Pedidos</string>
+
+</resources>
