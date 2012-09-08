@@ -41,6 +41,9 @@
             android:name=".news.NewsActivity"
             android:label="@string/company_name" >
         </activity>
-        </application>
+        <activity android:name=".prefs.PrefsActivity"
+            android:label="@string/menu_settings" >
+        </activity>
+    </application>
 
 </manifest>

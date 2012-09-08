@@ -3,14 +3,17 @@ package org.elkuku.pizzza;
 import java.util.Calendar;
 import java.util.List;
 
+import org.elkuku.pizzza.prefs.PrefsActivity;
 import org.elkuku.pizzza.promos.PromosDataSource;
 import org.elkuku.pizzza.types.TPromo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -39,16 +42,15 @@ public class MainActivity extends Activity {
 				promoText = item.getName();
 			}
 		}
-/*
+
 		TextView txtPromo = (TextView) findViewById(R.id.txtPromo);
 
-		if(promoText.contentEquals("")) {
+		if (promoText.contentEquals("")) {
+			//-- No Promo today :(
 			txtPromo.setVisibility(View.GONE);
-		}
-		else {
+		} else {
 			txtPromo.setText(promoText);
 		}
-		*/
 	}
 
 	@Override
@@ -62,9 +64,15 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 
-		String s = item.toString();
+		switch (item.getItemId()) {
 
-		Toast.makeText(getApplication(), "Hey: " + s, Toast.LENGTH_SHORT).show();
+		case R.id.menu_settings:
+
+			Intent i = new Intent(MainActivity.this, PrefsActivity.class);
+
+			startActivity(i);
+			break;
+		}
 
 		return true;
 	}

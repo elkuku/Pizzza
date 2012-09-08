@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Preferences -->
+
+    <string name="pref_header_1">User Data</string>
+    <string name="pref_desc_1">Your personal data</string>
+    <string name="pref_header_2">Administration</string>
+    <string name="pref_desc_2">Administrative settings</string>
+    <string name="pref_cat_1_title">Access information</string>
+
+    <!-- User data -->
+
+    <string name="prefs_username">User Name</string>
+    <string name="prefs_username_desc">Please fill in your user name</string>
+    <string name="prefs_password">Password</string>
+    <string name="prefs_password_desc">Please fill in your password</string>
+
+    <!-- Admin -->
+
+    <string name="prefs_admin_0_title">Base URI</string>
+    <string name="prefs_admin_0_desc">The base URI of your site</string>
+    <string name="prefs_admin_1_title">Menu ID</string>
+    <string name="prefs_admin_1_desc">The menu ID from a SOBI section</string>
+    <string name="prefs_admin_2_title">Contact ID</string>
+    <string name="prefs_admin_2_desc">A single contact id for the Orders screen</string>
+    <string name="prefs_admin_3_title">Content ID</string>
+    <string name="prefs_admin_3_desc">A content category id for the News screen</string>
+
+</resources>

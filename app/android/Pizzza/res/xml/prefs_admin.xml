@@ -1,0 +1,26 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Admin" >
+        <EditTextPreference
+            android:inputType="textUri"
+            android:key="id_base_uri"
+            android:summary="@string/prefs_admin_0_desc"
+            android:title="@string/prefs_admin_0_title" />
+        <EditTextPreference
+            android:inputType="number"
+            android:key="id_sobi"
+            android:summary="@string/prefs_admin_1_desc"
+            android:title="@string/prefs_admin_1_title" />
+        <EditTextPreference
+            android:inputType="number"
+            android:key="id_contact"
+            android:summary="@string/prefs_admin_2_desc"
+            android:title="@string/prefs_admin_2_title" />
+        <EditTextPreference
+            android:inputType="number"
+            android:key="id_content"
+            android:summary="@string/prefs_admin_3_desc"
+            android:title="@string/prefs_admin_3_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

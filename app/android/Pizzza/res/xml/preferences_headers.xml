@@ -1,0 +1,20 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <header
+        android:fragment="org.elkuku.pizzza.prefs.PrefsFragment"
+        android:summary="@string/pref_desc_1"
+        android:title="@string/pref_header_1" >
+        <extra
+            android:name="resource"
+            android:value="preferences" />
+    </header>
+    <header
+        android:fragment="org.elkuku.pizzza.prefs.PrefsFragment"
+        android:summary="@string/pref_desc_2"
+        android:title="@string/pref_header_2" >
+        <extra
+            android:name="resource"
+            android:value="prefs_admin" />
+    </header>
+
+</preference-headers>
