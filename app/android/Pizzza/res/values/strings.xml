@@ -19,7 +19,11 @@
     <string name="phone2">Claro</string>
     <string name="phone3">Movi</string>
     <string name="web_site">Web Site</string>
-
+    
+    <string name="lbl_price1">Small</string>
+    <string name="lbl_price2">Medium</string>
+    <string name="lbl_price3">Large</string>
+    
     <!-- Messages -->
 
     <string name="request_failed">The request failed.</string>
@@ -29,7 +33,7 @@
     <string name="pizzza_link_base">http://192.168.0.111/pizza-brazil/rest/v1</string>
     <string name="pizzza_news_link">content/category/8</string>
     <string name="pizzza_contact_link">contact/id/1</string>
-    <string name="pizzza_menu_link">sobi/section/54</string>
+    <string name="pizzza_catalog_link">sobi/section/54</string>
     <string name="pizzza_promo_link">sobi/category/63</string>
 
 </resources>

@@ -1,11 +1,10 @@
-package org.elkuku.pizzza.menu;
+package org.elkuku.pizzza.catalog;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.elkuku.pizzza.R;
-import org.elkuku.pizzza.R.string;
 import org.elkuku.pizzza.helpers.HttpHelper;
 import org.elkuku.pizzza.helpers.SQLiteHelper;
 import org.elkuku.pizzza.types.TEntry;
@@ -22,10 +21,10 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
-public class MenuDataSource {
+public class CatalogDataSource {
 
 	private Context context;
-	private MenuListFragment fragment;
+	private CatalogListFragment fragment;
 	private SQLiteDatabase database;
 	private SQLiteHelper dbhelper;
 	private Cursor cursor;
@@ -33,7 +32,7 @@ public class MenuDataSource {
 	private String[] columns = { "id", "catid", "title", "description", "price_peq", "price_med", "price_gra",
 			"favorite" };
 
-	public MenuDataSource(Context context, MenuListFragment fragment) {
+	public CatalogDataSource(Context context, CatalogListFragment fragment) {
 
 		this.context = context;
 		this.fragment = fragment;
@@ -53,7 +52,8 @@ public class MenuDataSource {
 
 	public void update() {
 
-		String url = context.getString(R.string.pizzza_link_base) + "/" + context.getString(R.string.pizzza_menu_link);
+		String url = context.getString(R.string.pizzza_link_base) + "/"
+				+ context.getString(R.string.pizzza_catalog_link);
 
 		new BackgroundTaskText().execute(url);
 	}
@@ -113,6 +113,8 @@ public class MenuDataSource {
 		String[] ids = new String[] { String.valueOf(id) };
 
 		database.update(table, values, "id = ?", ids);
+
+		close();
 	}
 
 	private void updateFromUpstream(JSONObject jsonObject) throws JSONException {
@@ -188,13 +190,15 @@ public class MenuDataSource {
 	private class BackgroundTaskText extends AsyncTask<String, Void, String> {
 
 		public BackgroundTaskText() {
-
-			fragment.setListShown(false);
+			if (null != fragment) {
+				Log.d("PIZZZA", "" + fragment);
+				// fragment.setListShown(false);
+			}
 		}
 
 		protected String doInBackground(String... url) {
 			String s = "";
-
+			Log.d("PIZZZA", "Requestingxx: " + url[0]);
 			try {
 				HttpHelper HttpHelper = new HttpHelper();
 
@@ -214,8 +218,10 @@ public class MenuDataSource {
 				try {
 					updateFromUpstream(new JSONObject(string));
 
-					fragment.update();
-					fragment.setListShown(true);
+					if (null != fragment) {
+						fragment.update();
+						fragment.setListShown(true);
+					}
 
 				} catch (JSONException e) {
 					e.printStackTrace();

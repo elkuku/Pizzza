@@ -7,11 +7,11 @@
         android:id="@+id/txtPromo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/pizzza_CI_bg"
+        android:background="@color/pizzza_CI_fg"
         android:gravity="center_horizontal"
         android:text="@string/title_promos"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/pizzza_CI_fg" />
+        android:textColor="@color/pizzza_CI_bg" />
 
     <ListView
         android:id="@android:id/list"

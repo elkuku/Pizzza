@@ -93,7 +93,7 @@ public class PromosDataSource {
 		return list;
 	}
 
-	protected List<String> getList() {
+	public List<String> getList() {
 		List<String> list = new ArrayList<String>();
 
 		cursor = database.query(table, columns, null, null, null, null, null);

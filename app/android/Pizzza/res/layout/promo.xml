@@ -6,10 +6,10 @@
         android:id="@+id/txtPromo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/pizzza_CI_fg"
+        android:background="@color/pizzza_CI_bg"
         android:gravity="center_horizontal"
         android:text="Promo...."
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/pizzza_CI_bg" />
+        android:textColor="@color/pizzza_CI_fg" />
 
 </LinearLayout>

@@ -19,6 +19,10 @@
     <string name="phone3">Movi</string>
     <string name="web_site">Web Site</string>
 
+    <string name="lbl_price1">Pequeña</string>
+    <string name="lbl_price2">Mediana</string>
+    <string name="lbl_price3">Grande</string>
+    
     <!-- Messages -->
 
     <string name="request_failed">La solicitud ha fallado</string>

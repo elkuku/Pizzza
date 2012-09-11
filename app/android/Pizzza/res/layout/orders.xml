@@ -8,6 +8,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/pizzza_CI_bg"
+        android:gravity="center_horizontal"
         android:paddingLeft="20dp"
         android:text="@string/title_orders"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -147,9 +148,9 @@
         android:id="@+id/txtMisc"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:paddingLeft="20dp"
         android:text="Misc...."
-        android:padding="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>

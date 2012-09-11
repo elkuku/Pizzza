@@ -19,8 +19,8 @@
 
     <string name="prefs_admin_0_title">Base URI</string>
     <string name="prefs_admin_0_desc">The base URI of your site</string>
-    <string name="prefs_admin_1_title">Menu ID</string>
-    <string name="prefs_admin_1_desc">The menu ID from a SOBI section</string>
+    <string name="prefs_admin_1_title">Catalog ID</string>
+    <string name="prefs_admin_1_desc">The catalog ID from a SOBI section</string>
     <string name="prefs_admin_2_title">Contact ID</string>
     <string name="prefs_admin_2_desc">A single contact id for the Orders screen</string>
     <string name="prefs_admin_3_title">Content ID</string>

@@ -1,13 +1,8 @@
-package org.elkuku.pizzza.menu;
+package org.elkuku.pizzza.catalog;
 
 import java.util.List;
 
-import org.elkuku.pizzza.DetailsActivity;
 import org.elkuku.pizzza.R;
-import org.elkuku.pizzza.R.color;
-import org.elkuku.pizzza.R.drawable;
-import org.elkuku.pizzza.R.id;
-import org.elkuku.pizzza.R.layout;
 import org.elkuku.pizzza.types.TEntry;
 
 import android.content.Context;
@@ -19,29 +14,30 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MenuAdapter extends ArrayAdapter<String> {
+public class CatalogAdapter extends ArrayAdapter<String> {
 
 	private final Context context;
-	private List<TEntry> menuList;
+	private List<TEntry> list;
 
-	public MenuAdapter(Context context, List<TEntry> menuList, String[] dummylist) {
-		super(context, R.layout.pizzza_row, dummylist);
+	public CatalogAdapter(Context context, List<TEntry> list, String[] dummylist) {
+		super(context, R.layout.catalog_row, dummylist);
 		this.context = context;
-		this.menuList = menuList;
+		this.list = list;
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View rowView = inflater.inflate(R.layout.pizzza_row, parent, false);
+		View rowView = inflater.inflate(R.layout.catalog_row, parent, false);
 
-		TEntry item = menuList.get(position);
+		TEntry item = list.get(position);
 
 		TextView textViewLabel = (TextView) rowView.findViewById(R.id.label);
-		textViewLabel.setText(item.getTitle());
+		String s1 = item.getTitle().toString();
+		textViewLabel.setText(s1);
 
 		TextView textViewDesc = (TextView) rowView.findViewById(R.id.ingredients);
-		textViewDesc.setText(item.getDescription());
+		textViewDesc.setText(item.getDescription().toString());
 
 		if (0 == item.getCatid()) {
 			// This is a category
@@ -62,13 +58,13 @@ public class MenuAdapter extends ArrayAdapter<String> {
 	}
 
 	public TEntry getEntry(int position) {
-		return menuList.get(position);
+		return list.get(position);
 	}
 
 	public Intent getEntryToIntent(int position, int REQUEST_CODE) {
 		TEntry item = getEntry(position);
 
-		Intent i = new Intent(context, DetailsActivity.class);
+		Intent i = new Intent(context, CatalogDetailsActivity.class);
 
 		i.putExtra("id", item.getId());
 		i.putExtra("title", item.getTitle());

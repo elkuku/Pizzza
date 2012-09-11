@@ -2,8 +2,8 @@
 
     <item
         android:id="@+id/menu_settings"
-        android:orderInCategory="100"
-        android:showAsAction="withText"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:showAsAction="ifRoom|withText"
         android:title="@string/menu_settings"/>
 
 </menu>

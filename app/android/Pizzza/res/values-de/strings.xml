@@ -18,6 +18,10 @@
     <string name="phone3">Movi</string>
     <string name="web_site">Web Site</string>
 
+    <string name="lbl_price1">Klein</string>
+    <string name="lbl_price2">Mittel</string>
+    <string name="lbl_price3">Gross</string>
+    
     <!-- Messages -->
 
     <string name="request_failed">Der Request schlug fehl</string>

@@ -1,6 +1,5 @@
 package org.elkuku.pizzza.types;
 
-
 public class TEntry {
 
 	private long id;

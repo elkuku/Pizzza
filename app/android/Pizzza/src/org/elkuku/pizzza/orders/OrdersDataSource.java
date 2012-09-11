@@ -3,7 +3,6 @@ package org.elkuku.pizzza.orders;
 import java.io.IOException;
 
 import org.elkuku.pizzza.R;
-import org.elkuku.pizzza.R.string;
 import org.elkuku.pizzza.helpers.HttpHelper;
 import org.elkuku.pizzza.helpers.SQLiteHelper;
 import org.elkuku.pizzza.types.TContact;
@@ -26,7 +25,8 @@ public class OrdersDataSource {
 	private Cursor cursor;
 
 	private String table = "contact";
-	private String[] columns = { "id", "name", "address", "city", "phone1", "phone2", "phone3", "email", "webpage", "misc" };
+	private String[] columns = { "id", "name", "address", "city", "phone1", "phone2", "phone3", "email", "webpage",
+			"misc" };
 
 	public OrdersDataSource(Context context) {
 
@@ -89,8 +89,8 @@ public class OrdersDataSource {
 		JSONObject item = jsonObject.getJSONObject("data");
 
 		createEntry(item.getString("name"), item.getString("address"), item.getString("suburb"),
-				item.getString("telephone"), item.getString("fax"), item.getString("mobile"), item.getString("email_to"),
-				item.getString("webpage"), item.getString("misc"));
+				item.getString("telephone"), item.getString("fax"), item.getString("mobile"),
+				item.getString("email_to"), item.getString("webpage"), item.getString("misc"));
 	}
 
 	public TContact getContact() {
@@ -131,10 +131,6 @@ public class OrdersDataSource {
 	}
 
 	private class BackgroundTaskText extends AsyncTask<String, Void, String> {
-
-		public BackgroundTaskText() {
-
-		}
 
 		protected String doInBackground(String... url) {
 			String s = "";

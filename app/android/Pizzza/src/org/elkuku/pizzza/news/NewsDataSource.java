@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.elkuku.pizzza.R;
-import org.elkuku.pizzza.R.string;
 import org.elkuku.pizzza.helpers.HttpHelper;
 import org.elkuku.pizzza.helpers.SQLiteHelper;
 import org.elkuku.pizzza.types.TNews;

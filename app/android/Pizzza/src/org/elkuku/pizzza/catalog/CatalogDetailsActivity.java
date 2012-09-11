@@ -1,4 +1,6 @@
-package org.elkuku.pizzza;
+package org.elkuku.pizzza.catalog;
+
+import org.elkuku.pizzza.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,7 +10,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-public class DetailsActivity extends Activity {
+public class CatalogDetailsActivity extends Activity {
 
 	private Bundle extras;
 
@@ -16,7 +18,7 @@ public class DetailsActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_info);
+		setContentView(R.layout.catalog_details);
 
 		extras = getIntent().getExtras();
 
@@ -28,19 +30,20 @@ public class DetailsActivity extends Activity {
 		String description = extras.getString("description");
 		int favorite = extras.getInt("favorite");
 
-		String priceInfo = ""
-				+ "Pequeña: " + extras.getFloat("price_peq")
-				+ "\nMediana: " + extras.getFloat("price_med")
-				+ "\nGrande : " + extras.getFloat("price_gra");
+		TextView txtPrice1 = (TextView) findViewById(R.id.txt_price1);
+		txtPrice1.setText(""+extras.getFloat("price_peq"));
+
+		TextView txtPrice2 = (TextView) findViewById(R.id.txt_price2);
+		txtPrice2.setText(""+extras.getFloat("price_med"));
+
+		TextView txtPrice3 = (TextView) findViewById(R.id.txt_price3);
+		txtPrice3.setText(""+extras.getFloat("price_gra"));
 
 		TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
 		txtTitle.setText(title);
 
 		TextView txtDescription = (TextView) findViewById(R.id.txtDescription);
 		txtDescription.setText(description);
-
-		TextView txtPrices = (TextView) findViewById(R.id.txtPrices);
-		txtPrices.setText(priceInfo);
 
 		if(1 == favorite)
 		{

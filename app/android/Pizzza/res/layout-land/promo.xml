@@ -7,10 +7,10 @@
         android:id="@+id/txtPromo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/pizzza_CI_fg"
+        android:background="@color/pizzza_CI_bg"
         android:paddingLeft="10dp"
-        android:text="Promo"
+        android:text="Promo..."
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/pizzza_CI_bg" />
+        android:textColor="@color/pizzza_CI_fg" />
 
 </LinearLayout>
