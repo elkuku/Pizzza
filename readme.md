@@ -1,6 +1,6 @@
 ## Pizzza
 
-The Pizzza project tries to connect an Android App with a Joomla! CMS site. This is done by a REST interface.
+The Pizzza project tries to connect an Android&trade; App with a Joomla!&trade; CMS site. This is done by a REST interface.
 
 The goal is to retrieve data and store it in the device for offline reading.
 
@@ -39,37 +39,47 @@ The landscape device uses spanish, while the small portait device speaks english
 ----
 
 #### Catalog
-![](http://i.imgur.com/rTlqa.png)
-
-![](http://i.imgur.com/qmXpC.png)The main menu calls an activity:![](http://i.imgur.com/Xzg4f.png)
-
 The "Catalog" is provided by a Sobi section with categories and items. The fields are predefined and have to be adjusted to your needs.
 
 The head line "green on yellow" is a daily bargain acording to the current weekday (see the next section).
 
+![](http://i.imgur.com/rTlqa.png)
+
+![](http://i.imgur.com/qmXpC.png)The main menu calls an activity: &rArr; ![](http://i.imgur.com/Xzg4f.png)
+
 ----
 
 #### Promocions
+The "Promocions" are meant to be daily bargains. They are provided by a Sobi section without categories.
+
 ![](http://i.imgur.com/axeqH.png)
 
 ![](http://i.imgur.com/2ssOI.png)
 
-The "Promocions" are meant to be daily bargains. They are provided by a Sobi section without categories.
-
 ----
 
 #### News
+The "News" are provided by com_content. Only The Titel, text and creation date are shown.
+
 ![](http://i.imgur.com/NjdZZ.png)
 
 ![](http://i.imgur.com/cSjVR.png)
 
-The "News" are provided by com_content. Only The Titel, text and creation date are shown.
-
 ----
 
 #### Orders
+The Orders section is an address taken from a com_contact item.
+
 ![](http://i.imgur.com/8fDam.png)
 
 ![](http://i.imgur.com/5XRML.png)
 
-The Orders section is an address taken from a com_contact item.
+----
+
+----
+
+Android&trade; and Joomla!&trade; are registrered trademarks.
+
+have Fun,
+
+```=;)```
