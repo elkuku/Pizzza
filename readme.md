@@ -47,6 +47,13 @@ The head line "green on yellow" is a daily bargain acording to the current weekd
 
 ![](http://i.imgur.com/qmXpC.png)The main menu calls an activity: &rArr; ![](http://i.imgur.com/Xzg4f.png)
 
+#### Catalog Details
+The catalog details are provided by a Sobi item.
+
+![](http://i.imgur.com/SIDp2.png)
+
+![](http://i.imgur.com/OqRVa.png)
+
 ----
 
 #### Promocions
