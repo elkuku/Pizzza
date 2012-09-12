@@ -32,28 +32,44 @@ The template is based on [Twitters bootstrap](http://twitter.github.com/bootstra
 
 ### Screenshots
 
+This is a sample project for a spanish Pizzeria - habla español ? :)
+
+The landscape device uses spanish, while the small portait device speaks english (for your coinvenience ;) )
+
+----
+
 #### Catalog
 ![](http://i.imgur.com/rTlqa.png)
 
-![](http://i.imgur.com/qmXpC.png)![](http://i.imgur.com/Xzg4f.png)
+![](http://i.imgur.com/qmXpC.png)The main menu calls an activity:![](http://i.imgur.com/Xzg4f.png)
+
 The "Catalog" is provided by a Sobi section with categories and items. The fields are predefined and have to be adjusted to your needs.
 
 The head line "green on yellow" is a daily bargain acording to the current weekday (see the next section).
+
+----
 
 #### Promocions
 ![](http://i.imgur.com/axeqH.png)
 
 ![](http://i.imgur.com/2ssOI.png)
+
 The "Promocions" are meant to be daily bargains. They are provided by a Sobi section without categories.
+
+----
 
 #### News
 ![](http://i.imgur.com/NjdZZ.png)
 
 ![](http://i.imgur.com/cSjVR.png)
+
 The "News" are provided by com_content. Only The Titel, text and creation date are shown.
+
+----
 
 #### Orders
 ![](http://i.imgur.com/8fDam.png)
 
 ![](http://i.imgur.com/5XRML.png)
+
 The Orders section is an address taken from a com_contact item.
